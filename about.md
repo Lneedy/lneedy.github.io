@@ -5,9 +5,9 @@ permalink: /about/
 ---
 ### Information
 
-profession: **web frontend**
-years of working: **2 year**
-location: **GuangZhou**
+* profession: **web frontend**
+* years of working: **2 year**
+* location: **GuangZhou**
 
 ### More Information
 
