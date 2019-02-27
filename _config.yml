@@ -3,7 +3,7 @@
 #
 
 # Name of your site (displayed in the header)
-name: lneedy
+name: "lneedy"
 
 # Short bio or description (displayed in the header)
 description: "做一个成功的大前端设计师"
@@ -18,8 +18,8 @@ avatar: https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/je
 # Includes an icon in the footer for each username you enter
 footer-links:
   email:"12986570868@qq.com"
-  facebook:
-  flickr:
+  facebook: # facebook
+  flickr: #
   github: "Lneedy"
   instagram:
   linkedin:
@@ -35,7 +35,7 @@ footer-links:
 disqus:
 
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
-google_analytics: lneedy
+google_analytics: "lneedy"
 
 # Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
 # Used for Sitemap.xml and your RSS feed
