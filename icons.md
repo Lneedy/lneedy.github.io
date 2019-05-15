@@ -13,163 +13,163 @@ permalink: /icons/
 
 ```
 
-<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:inherit;">
+<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:top;">
   <i class="icon-botaihu_arrow_up el-icon-view "
       style="font-family: jfkfont!important;font-style: normal;"></i>
   <div style="color:#bfbfbf;word-wrap:break-word;font-size:12px;margin-top:10px">icon-botaihu_arrow_up</div>
   </div>
 
-<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:inherit;">
+<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:top;">
   <i class="icon-admin_icon_almightybooking_normal el-icon-view "
       style="font-family: jfkfont!important;font-style: normal;"></i>
   <div style="color:#bfbfbf;word-wrap:break-word;font-size:12px;margin-top:10px">icon-admin_icon_almightybooking_normal</div>
    </div>
 
-<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:inherit;">
+<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:top;">
   <i class="icon-admin_icon_customer_normal            el-icon-view "
       style="font-family: jfkfont!important;font-style: normal;"></i>
   <div style="color:#bfbfbf;word-wrap:break-word;font-size:12px;margin-top:10px">icon-admin_icon_customer_normal</div>
    </div>
 
-<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:inherit;">
+<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:top;">
   <i class="icon-admin_icon_data_normal            el-icon-view "
       style="font-family: jfkfont!important;font-style: normal;"></i>
   <div style="color:#bfbfbf;word-wrap:break-word;font-size:12px;margin-top:10px">icon-admin_icon_data_normal</div>
    </div>
 
-<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:inherit;">
+<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:top;">
   <i class="icon-admin_icon_basic_normal            el-icon-view "
       style="font-family: jfkfont!important;font-style: normal;"></i>
   <div style="color:#bfbfbf;word-wrap:break-word;font-size:12px;margin-top:10px">icon-admin_icon_basic_normal</div>
    </div>
 
-<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:inherit;">
+<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:top;">
   <i class="icon-admin_icon_booking_normal            el-icon-view "
       style="font-family: jfkfont!important;font-style: normal;"></i>
   <div style="color:#bfbfbf;word-wrap:break-word;font-size:12px;margin-top:10px">icon-admin_icon_booking_normal</div>
    </div>
 
-<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:inherit;">
+<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:top;">
   <i class="icon-admin_icon_distribution_normal            el-icon-view "
       style="font-family: jfkfont!important;font-style: normal;"></i>
   <div style="color:#bfbfbf;word-wrap:break-word;font-size:12px;margin-top:10px">icon-admin_icon_distribution_normal</div>
    </div>
 
-<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:inherit;">
+<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:top;">
   <i class="icon-admin_icon_happypay_normal            el-icon-view "
       style="font-family: jfkfont!important;font-style: normal;"></i>
   <div style="color:#bfbfbf;word-wrap:break-word;font-size:12px;margin-top:10px">icon-admin_icon_happypay_normal</div>
    </div>
 
-<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:inherit;">
+<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:top;">
   <i class="icon-admin_icon_divided_normal            el-icon-view "
       style="font-family: jfkfont!important;font-style: normal;"></i>
   <div style="color:#bfbfbf;word-wrap:break-word;font-size:12px;margin-top:10px">icon-admin_icon_divided_normal</div>
    </div>
 
-<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:inherit;">
+<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:top;">
   <i class="icon-admin_icon_ordering_normal            el-icon-view "
       style="font-family: jfkfont!important;font-style: normal;"></i>
   <div style="color:#bfbfbf;word-wrap:break-word;font-size:12px;margin-top:10px">icon-admin_icon_ordering_normal</div>
    </div>
 
-<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:inherit;">
+<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:top;">
   <i class="icon-admin_icon_system_normal            el-icon-view "
       style="font-family: jfkfont!important;font-style: normal;"></i>
   <div style="color:#bfbfbf;word-wrap:break-word;font-size:12px;margin-top:10px">icon-admin_icon_system_normal</div>
    </div>
 
-<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:inherit;">
+<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:top;">
   <i class="icon-admin_icon_user_normal           el-icon-view "
       style="font-family: jfkfont!important;font-style: normal;"></i>
   <div style="color:#bfbfbf;word-wrap:break-word;font-size:12px;margin-top:10px">icon-admin_icon_user_normal</div>
    </div>
 
-<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:inherit;">
+<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:top;">
   <i class="icon-admin_icon_overview_normal           el-icon-view "
       style="font-family: jfkfont!important;font-style: normal;"></i>
   <div style="color:#bfbfbf;word-wrap:break-word;font-size:12px;margin-top:10px">icon-admin_icon_overview_normal</div>
    </div>
 
-<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:inherit;">
+<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:top;">
   <i class="icon-admin_icon_mall_normal           el-icon-view "
       style="font-family: jfkfont!important;font-style: normal;"></i>
   <div style="color:#bfbfbf;word-wrap:break-word;font-size:12px;margin-top:10px">icon-admin_icon_mall_normal</div>
    </div>
 
-<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:inherit;">
+<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:top;">
   <i class="icon-admin_icon_marketing_normal           el-icon-view "
       style="font-family: jfkfont!important;font-style: normal;"></i>
   <div style="color:#bfbfbf;word-wrap:break-word;font-size:12px;margin-top:10px">icon-admin_icon_marketing_normal</div>
    </div>
 
-<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:inherit;">
+<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:top;">
   <i class="icon-admin_icon_envelope_normal          el-icon-view "
       style="font-family: jfkfont!important;font-style: normal;"></i>
   <div style="color:#bfbfbf;word-wrap:break-word;font-size:12px;margin-top:10px">icon-admin_icon_envelope_normal</div>
    </div>
 
-<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:inherit;">
+<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:top;">
   <i class="icon-admin_icon_default_n        el-icon-view "
       style="font-family: jfkfont!important;font-style: normal;"></i>
   <div style="color:#bfbfbf;word-wrap:break-word;font-size:12px;margin-top:10px">icon-admin_icon_default_n</div>
    </div>
 
-<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:inherit;">
+<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:top;">
   <i class="icon-admin_icon_jpay_normal       el-icon-view "
       style="font-family: jfkfont!important;font-style: normal;"></i>
   <div style="color:#bfbfbf;word-wrap:break-word;font-size:12px;margin-top:10px">icon-admin_icon_jpay_normal</div>
    </div>
 
-<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:inherit;">
+<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:top;">
   <i class="icon-admin_icon_balabala_normal       el-icon-view "
       style="font-family: jfkfont!important;font-style: normal;"></i>
   <div style="color:#bfbfbf;word-wrap:break-word;font-size:12px;margin-top:10px">icon-admin_icon_balabala_normal</div>
    </div>
 
-<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:inherit;">
+<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:top;">
   <i class="icon-admin_icon_invoice_normal     el-icon-view "
       style="font-family: jfkfont!important;font-style: normal;"></i>
   <div style="color:#bfbfbf;word-wrap:break-word;font-size:12px;margin-top:10px">icon-admin_icon_invoice_normal</div>
    </div>
 
-<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:inherit;">
+<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:top;">
   <i class="icon-admin_icon_meetmanage_normal    el-icon-view "
       style="font-family: jfkfont!important;font-style: normal;"></i>
   <div style="color:#bfbfbf;word-wrap:break-word;font-size:12px;margin-top:10px">icon-admin_icon_meetmanage_normal</div>
    </div>
 
-<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:inherit;">
+<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:top;">
   <i class="icon-admin_icon_reservation_normal   el-icon-view "
       style="font-family: jfkfont!important;font-style: normal;"></i>
   <div style="color:#bfbfbf;word-wrap:break-word;font-size:12px;margin-top:10px">icon-admin_icon_reservation_normal</div>
    </div>
 
-<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:inherit;">
+<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:top;">
   <i class="icon-admin_icon_payconfiguration_normal  el-icon-view "
       style="font-family: jfkfont!important;font-style: normal;"></i>
   <div style="color:#bfbfbf;word-wrap:break-word;font-size:12px;margin-top:10px">icon-admin_icon_payconfiguration_normal</div>
    </div>
 
-<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:inherit;">
+<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:top;">
   <i class="icon-admin_icon_restaurant_normal  el-icon-view "
       style="font-family: jfkfont!important;font-style: normal;"></i>
   <div style="color:#bfbfbf;word-wrap:break-word;font-size:12px;margin-top:10px">icon-admin_icon_restaurant_normal</div>
    </div>
 
-<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:inherit;">
+<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:top;">
   <i class="icon-admin_icon_newmall_normal  el-icon-view "
       style="font-family: jfkfont!important;font-style: normal;"></i>
   <div style="color:#bfbfbf;word-wrap:break-word;font-size:12px;margin-top:10px">icon-admin_icon_newmall_normal</div>
    </div>
 
-<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:inherit;">
+<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:top;">
   <i class="icon-admin_icon_newsystem_normal el-icon-view "
       style="font-family: jfkfont!important;font-style: normal;"></i>
   <div style="color:#bfbfbf;word-wrap:break-word;font-size:12px;margin-top:10px">icon-admin_icon_newsystem_normal</div>
    </div>
 
-<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:inherit;">
+<div style="width: 50px;text-align:center;display:inline-block;margin:20px;vertical-align:top;">
   <i class="icon-admin_icon_takeout_normal  el-icon-view "
       style="font-family: jfkfont!important;font-style: normal;"></i>
   <div style="color:#bfbfbf;word-wrap:break-word;font-size:12px;margin-top:10px">icon-admin_icon_takeout_normal</div>
