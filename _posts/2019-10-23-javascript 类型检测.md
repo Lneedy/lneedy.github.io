@@ -19,7 +19,7 @@ _大部分原始类型都可以采用 `typeof` 做判断_
 
 function isString(value) {
   const type = typeof value
-  const toString = Object.prototype.toString.call
+  const toString = value => Object.prototype.toString.call(value)
   // !Array.isArray()的判断可以筛选掉具有length的数组格式
   return (
     type === 'string' ||
@@ -49,7 +49,7 @@ function isString(value) {
 
 function isNumber(value) {
   const type = typeof value
-  const toString = Object.prototype.toString.call
+  const toString = value => Object.prototype.toString.call(value)
   return (
     type === 'number' ||
     (type === 'object' &&
@@ -114,7 +114,7 @@ function isNull(value) {
 
 function isBoolean(value) {
   const type = typeof value
-  const toString = Object.prototype.toString.call
+  const toString = value => Object.prototype.toString.call(value)
   return (
     value === true ||
     value === false ||
@@ -148,7 +148,7 @@ _复杂类型通常指包含多种基础类型_
 
 function isFunction(value) {
   const type = typeof value
-  const toString = Object.prototype.toString.call
+  const toString = value => Object.prototype.toString.call(value)
   // 判断是否是对象
   if (!(value != null && (type === 'object' || type === 'function')))
     return false
@@ -172,20 +172,22 @@ function isFunction(value) {
 - 代码实现:
 
 ```javascript
-
-function isArray (value) {
-    const type = typeof value
-    const toString = Object.prototype.toString.call
-    return Array.isArray(value) || toString(value) === '[object Array]' || value.constructor === Array
+function isArray(value) {
+  const type = typeof value
+  const toString = value => Object.prototype.toString.call(value)
+  return (
+    Array.isArray(value) ||
+    toString(value) === '[object Array]' ||
+    value.constructor === Array
+  )
 }
-
 ```
 
 ### 对象 _Object_
 
 - 描述: **Object** 构造函数为给定值创建一个对象包装器。如果给定值是 null 或 undefined，将会创建并返回一个空对象，否则，将返回一个与给定值对应类型的对象。
 
-- 判断条件: 可以通过 `new Object()`, `Object.create()`, 或者字面量标记(初始化标记)来创建 
+- 判断条件: 可以通过 `new Object()`, `Object.create()`, 或者字面量标记(初始化标记)来创建
 
 - 代码实现:
 
@@ -193,53 +195,54 @@ function isArray (value) {
 // result
 // isObject({}) // true
 // isObject(Function) // true
-// isObject([1,2,3]) // true 
+// isObject([1,2,3]) // true
 
-function isObject (value) {
-    const type = typeof value
-    return value != null || (type === 'object' || type === 'function')
+function isObject(value) {
+  const type = typeof value
+  return value != null || type === 'object' || type === 'function'
 }
-
 ```
 
 ### 键值对结构数组 _Map_
 
 - 描述: 对象保存键值对。任何值(对象或者原始值) 都可以作为一个键或一个值。
 
-- 判断条件: Map只可以通过`new Map`创建, 所以只要判断`toString`是否正确就可以了, lodash 采用先判断是否支持Nodejs的`util.types.isMap`来判断,因为要求是node10+以上版本, 所以这里就删除不展示在代码中
+- 判断条件: Map 只可以通过`new Map`创建, 所以只要判断`toString`是否正确就可以了, lodash 采用先判断是否支持 Nodejs 的`util.types.isMap`来判断,因为要求是 node10+以上版本, 所以这里就删除不展示在代码中
 
-- 代码实现: 
+- 代码实现:
 
 ```javascript
 // result
 // isMap(new Map) // true
 
-function isMap (value) {
-    const type = typeof value
-    const toString = Object.prototype.toString.call
-    return type === 'object' && value !== null && toString(value) === '[object Map]'
+function isMap(value) {
+  const type = typeof value
+  const toString = value => Object.prototype.toString.call(value)
+  return (
+    type === 'object' && value !== null && toString(value) === '[object Map]'
+  )
 }
-
 ```
 
 ### 唯一值数组 _Set_
 
-- 描述: 对象是值的集合，你可以按照插入的顺序迭代它的元素。 Set中的元素只会出现一次，即 Set 中的元素是唯一的。
+- 描述: 对象是值的集合，你可以按照插入的顺序迭代它的元素。 Set 中的元素只会出现一次，即 Set 中的元素是唯一的。
 
-- 判断条件:  Map只可以通过`new Set`创建, 所以只要判断`toString`是否正确就可以了, lodash 采用先判断是否支持Nodejs的`util.types.isSet`再使用原生提供的判断方法,因为要求是node10+以上版本, 所以这里就删除不展示在代码中
+- 判断条件: Map 只可以通过`new Set`创建, 所以只要判断`toString`是否正确就可以了, lodash 采用先判断是否支持 Nodejs 的`util.types.isSet`再使用原生提供的判断方法,因为要求是 node10+以上版本, 所以这里就删除不展示在代码中
 
-- 代码实现: 
+- 代码实现:
 
 ```javascript
 // result
 // isSet(new Set) // true
 
-function isSet (value) {
-    const type = typeof value
-    const toString = Object.prototype.toString.call
-    return type === 'object' && value !== null && toString(value) === '[object Set]'
+function isSet(value) {
+  const type = typeof value
+  const toString = value => Object.prototype.toString.call(value)
+  return (
+    type === 'object' && value !== null && toString(value) === '[object Set]'
+  )
 }
-
 ```
 
 ### 唯一实例 _Symbol_
@@ -248,60 +251,66 @@ function isSet (value) {
 
 - 判断条件: 该数据类型不提供构造方法创建,只允许静态方法创建!
 
-- 代码实现: 
+- 代码实现:
 
 ```javascript
 // result
 // isSet(Symbol.iterator) // true
 // isSet(Symbol.search) // true
 
-function isSymbol (value) {
-    const type = typeof value
-    const toString = Object.prototype.toString.call
-    return type === 'object' && value !== null && toString(value) === '[object Symbol]'
+function isSymbol(value) {
+  const type = typeof value
+  const toString = value => Object.prototype.toString.call(value)
+  return (
+    type === 'object' && value !== null && toString(value) === '[object Symbol]'
+  )
 }
-
 ```
-
 
 ### 临时存储键值对结构数组 _WeakMap_
 
 - 描述: 对象是一组键/值对的集合，其中的键是弱引用的。其键必须是对象，而值可以是任意的。
 
-- 判断条件: WeakMap只可以通过`new WeakMap`创建, 所以只要判断`toString`是否正确就可以了, lodash 采用先判断是否支持Nodejs的`util.types.isWeakMap`来判断,因为要求是node10+以上版本, 所以这里就删除不展示在代码中
+- 判断条件: WeakMap 只可以通过`new WeakMap`创建, 所以只要判断`toString`是否正确就可以了, lodash 采用先判断是否支持 Nodejs 的`util.types.isWeakMap`来判断,因为要求是 node10+以上版本, 所以这里就删除不展示在代码中
 
-- 代码实现: 
+- 代码实现:
 
 ```javascript
 // result
 // isWeakMap(new WeakMap) // true
 
-function isWeakMap (value) {
-    const type = typeof value
-    const toString = Object.prototype.toString.call
-    return type === 'object' && value !== null && toString(value) === '[object WeakMap]'
+function isWeakMap(value) {
+  const type = typeof value
+  const toString = value => Object.prototype.toString.call(value)
+  return (
+    type === 'object' &&
+    value !== null &&
+    toString(value) === '[object WeakMap]'
+  )
 }
-
 ```
 
 ### 临时存储唯一值数组 _WeakSet_
 
 - 描述: WeakSet 对象允许你将弱保持对象存储在一个集合中。
 
-- 判断条件: WeakSet只可以通过`new WeakSet`创建, 所以只要判断`toString`是否正确就可以了, lodash 采用先判断是否支持Nodejs的`util.types.isWeakSet`来判断,因为要求是node10+以上版本, 所以这里就删除不展示在代码中
+- 判断条件: WeakSet 只可以通过`new WeakSet`创建, 所以只要判断`toString`是否正确就可以了, lodash 采用先判断是否支持 Nodejs 的`util.types.isWeakSet`来判断,因为要求是 node10+以上版本, 所以这里就删除不展示在代码中
 
-- 代码实现: 
+- 代码实现:
 
 ```javascript
 // result
 // isWeakSet(new WeakSet) // true
 
-function isWeakSet (value) {
-    const type = typeof value
-    const toString = Object.prototype.toString.call
-    return type === 'object' && value !== null && toString(value) === '[object WeakSet]'
+function isWeakSet(value) {
+  const type = typeof value
+  const toString = value => Object.prototype.toString.call(value)
+  return (
+    type === 'object' &&
+    value !== null &&
+    toString(value) === '[object WeakSet]'
+  )
 }
-
 ```
 
 ## 拓展类型
@@ -313,13 +322,17 @@ function isWeakSet (value) {
 - 代码实现:
 
 ```javascript
-// result 
+// result
 // isArguments(function () {return arguments}())
 
-function isArguments (value) {
-    const toString = Object.prototype.toString.call
-    const type = typeof value
-    return type === 'object' && value !== null && toString(value) === '[object Arguments]'
+function isArguments(value) {
+  const toString = value => Object.prototype.toString.call(value)
+  const type = typeof value
+  return (
+    type === 'object' &&
+    value !== null &&
+    toString(value) === '[object Arguments]'
+  )
 }
 ```
 
@@ -330,11 +343,11 @@ function isArguments (value) {
 - 代码实现:
 
 ```javascript
-// result 
+// result
 // isInfinity(Infinity) // true
 
-function isInfinity (value) {
-    return value === Infinity
+function isInfinity(value) {
+  return value === Infinity
 }
 ```
 
@@ -345,13 +358,15 @@ function isInfinity (value) {
 - 代码实现:
 
 ```javascript
-// result 
+// result
 // isDate(new Date)
 
-function isDate (value) {
-    const toString = Object.prototype.toString.call
-    const type = typeof value
-    return type === 'object' && value !== null && toString(value) === '[object Date]'
+function isDate(value) {
+  const toString = value => Object.prototype.toString.call(value)
+  const type = typeof value
+  return (
+    type === 'object' && value !== null && toString(value) === '[object Date]'
+  )
 }
 ```
 
@@ -362,26 +377,28 @@ function isDate (value) {
 - 代码实现:
 
 ```javascript
-// result 
+// result
 // isRegExp(new Reg) // true
 // isRegExp(/?:/) // true
 // isRegExp(Reg()) // true
 
-function isRegExp (value) {
-    const toString = Object.prototype.toString.call
-    const type = typeof value
-    return type === 'object' && value !== null && toString(value) === '[object RegExp]'
+function isRegExp(value) {
+  const toString = value => Object.prototype.toString.call(value)
+  const type = typeof value
+  return (
+    type === 'object' && value !== null && toString(value) === '[object RegExp]'
+  )
 }
 ```
 
 ### 错误对象 _Error_
 
-- 判断条件: 首先, Error是一个拥有 “ EvalError”，“ RangeError”，“ ReferenceError”，“ SyntaxError”，“ TypeError”或“ URIError”对象。 也包括由`DOMException`接口调用方法或访问Web Api 属性时产生的异常事件,有些包含(`message`与`name`)的非普通对象也被称为异常或者错误, 一般又调用抛出, 也可以通过构造函数和工厂符号创建!
+- 判断条件: 首先, Error 是一个拥有 “ EvalError”，“ RangeError”，“ ReferenceError”，“ SyntaxError”，“ TypeError”或“ URIError”对象。 也包括由`DOMException`接口调用方法或访问 Web Api 属性时产生的异常事件,有些包含(`message`与`name`)的非普通对象也被称为异常或者错误, 一般又调用抛出, 也可以通过构造函数和工厂符号创建!
 
 - 代码实现:
 
 ```javascript
-// result 
+// result
 // isError(EvalError()) // true
 // isError(Error()) // true
 // isError(RangeError()) // true
@@ -391,24 +408,34 @@ function isRegExp (value) {
 // isError(URIError()) // true
 // isError(DOMException()) // true
 
-function isError (value) {
-    const toString = Object.prototype.toString.call
-    const type = typeof value
-    if (!(type === 'object' && value !== null)) return false
-    return toString(value) === '[object Error]' || toString(value) === '[object DOMException]' || (typeof value.message === 'string' && typeof value.name === 'string' && !isPlainObject(value))
+function isError(value) {
+  const toString = value => Object.prototype.toString.call(value)
+  const type = typeof value
+  if (!(type === 'object' && value !== null)) return false
+  return (
+    toString(value) === '[object Error]' ||
+    toString(value) === '[object DOMException]' ||
+    (typeof value.message === 'string' &&
+      typeof value.name === 'string' &&
+      !isPlainObject(value))
+  )
 }
 
 // 判断普通对象
-function isPlainObject (value) {
-    const toString = Object.prototype.toString.call
-    const type = typeof value
-    if (!(type === 'object' && value !== null) || toString(value) !== '[object Object]') return false
-    if (Object.getPrototypeOf(value) === null) return true
-    let proto = value
-    while (Object.getPrototypeOf(proto) !== null) proto = Object.getPrototypeOf(proto)
-    return Object.getPrototypeOf(value) === proto
+function isPlainObject(value) {
+  const toString = value => Object.prototype.toString.call(value)
+  const type = typeof value
+  if (
+    !(type === 'object' && value !== null) ||
+    toString(value) !== '[object Object]'
+  )
+    return false
+  if (Object.getPrototypeOf(value) === null) return true
+  let proto = value
+  while (Object.getPrototypeOf(proto) !== null)
+    proto = Object.getPrototypeOf(proto)
+  return Object.getPrototypeOf(value) === proto
 }
-
 ```
 
 ### 二进制数据缓冲区类数组视图 _TypeArray_
@@ -420,17 +447,17 @@ function isPlainObject (value) {
 - 代码实现:
 
 ```javascript
-// result 
+// result
 // isTypeArray() // true
 // isRegExp(/?:/) // true
 // isRegExp(Reg()) // true
 
-function isTypeArray (value) {
-    const reg = /^\[object (?:Float(?:32|64)|(?:Int|Uint)(?:8|16|32)|Uint8Clamped)Array\]$/
-    const toString = Object.prototype.toString.call
-    const type = typeof value
-    const test = reg.test
-    return type === 'object' && value !== null && test(toString(value))
+function isTypeArray(value) {
+  const reg = /^\[object (?:Float(?:32|64)|(?:Int|Uint)(?:8|16|32)|Uint8Clamped)Array\]$/
+  const toString = value => Object.prototype.toString.call(value)
+  const type = typeof value
+  const test = reg.test
+  return type === 'object' && value !== null && test(toString(value))
 }
 ```
 
@@ -438,46 +465,58 @@ function isTypeArray (value) {
 
 - 描述: 对象用来表示通用的、固定长度的原始二进制数据缓冲区.
 
-- 判断条件: 可以通过构造函数的方式创建一个指定字节长度的ArrayBuffer 对象
+- 判断条件: 可以通过构造函数的方式创建一个指定字节长度的 ArrayBuffer 对象
 
 ```javascript
 // result
 // isArrayBuffer (new ArrayBuffer)  // true
 
-function isArrayBuffer (value) {
-    const type = typeof value
-    const toString = Object.prototype.toString.call
-    return type === 'object' && value !== null && toString(value) === '[object ArrayBuffer]'
+function isArrayBuffer(value) {
+  const type = typeof value
+  const toString = value => Object.prototype.toString.call(value)
+  return (
+    type === 'object' &&
+    value !== null &&
+    toString(value) === '[object ArrayBuffer]'
+  )
 }
-
 ```
 
 ### Dom 元素 _Element_
 
 - 描述: 文档对象模型（DOM）中的一部分， 文档对象模型是（DOM）被浏览器展示为页面。
 
-- 判断条件: 不是普通对象, 必须拥有nodeType 并且必须等于 1
+- 判断条件: 不是普通对象, 必须拥有 nodeType 并且必须等于 1
 
 ```javascript
 // isElement(document.body) // true
-//         
+//
 
 function isElement(value) {
-    const type = typeof value
-    return type === 'object' && value !== null && value.nodeType === 1 && !isPlaninObject(value)
+  const type = typeof value
+  return (
+    type === 'object' &&
+    value !== null &&
+    value.nodeType === 1 &&
+    !isPlaninObject(value)
+  )
 }
 
 // 判断普通对象
-function isPlainObject (value) {
-    const toString = Object.prototype.toString.call
-    const type = typeof value
-    if (!(type === 'object' && value !== null) || toString(value) !== '[object Object]') return false
-    if (Object.getPrototypeOf(value) === null) return true
-    let proto = value
-    while (Object.getPrototypeOf(proto) !== null) proto = Object.getPrototypeOf(proto)
-    return Object.getPrototypeOf(value) === proto
+function isPlainObject(value) {
+  const toString = value => Object.prototype.toString.call(value)
+  const type = typeof value
+  if (
+    !(type === 'object' && value !== null) ||
+    toString(value) !== '[object Object]'
+  )
+    return false
+  if (Object.getPrototypeOf(value) === null) return true
+  let proto = value
+  while (Object.getPrototypeOf(proto) !== null)
+    proto = Object.getPrototypeOf(proto)
+  return Object.getPrototypeOf(value) === proto
 }
-
 ```
 
 ## 相关基础
@@ -490,13 +529,13 @@ function isPlainObject (value) {
 > 4. `null` 与 `undefined` 是相等的；
 > 5. `null` 与 `undefined` 在比较相等性时不可以转换为任何值。
 
-### typeOf 可以检测 Function对象的类型为 Function?
+### typeOf 可以检测 Function 对象的类型为 Function?
 
 > 在一些浏览器上`typeof` 检测 `Function`的值并不一致, 例如 **safari 9** 就是返回 `object`
 
 ## 引用来源
 
 > https://developer.mozilla.org/zh-CN/ << Mozilla 开发者网络文档>>
-> https://lodash.com/docs/4.17.15 `<<Lodash 函数库文档>>` 
-> https://segmentfault.com/a/1190000019912961?utm_source=tag-newest `<<Lodash 是如何做类型检测的>>` 
+> https://lodash.com/docs/4.17.15 `<<Lodash 函数库文档>>`
+> https://segmentfault.com/a/1190000019912961?utm_source=tag-newest `<<Lodash 是如何做类型检测的>>`
 > https://www.cnblogs.com/sungg/p/6796718.html?utm_source=itdadao&utm_medium=referral `《饿了么大前端 Node.js 进阶教程》—Javascript 基础问题—类型判断`
